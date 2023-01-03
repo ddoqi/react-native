@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "rn-basic-app",
+    "slug": "rn-lecture-basic",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/80f29d07-67e5-48a2-880a-f0e69e56e47a"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "80f29d07-67e5-48a2-880a-f0e69e56e47a"
+      }
+    },
+    "owner": "hongdakyung",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
+  }
+}
