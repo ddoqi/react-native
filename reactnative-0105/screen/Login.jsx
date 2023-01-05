@@ -7,38 +7,6 @@ import {
 } from "firebase/auth";
 import { emailRegex, pwRegex } from "../util";
 
-const View = styled.View`
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  padding-top: 50px;
-`;
-
-const LoginButton = styled.TouchableOpacity`
-  width: 150px;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-`;
-const LoginText = styled.Text`
-  font-size: 20px;
-`;
-const RegisterText = styled(LoginText)``;
-
-const RegisterButton = styled(LoginButton)``;
-
-const EmailInput = styled.TextInput`
-  background-color: grey;
-  width: 150px;
-  padding: 10px 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-`;
-const PwInput = styled(EmailInput)``;
-
 export default function Login({ navigation: { goBack, setOptions } }) {
   const emailRef = useRef(null);
   const pwRef = useRef(null);
@@ -149,3 +117,35 @@ export default function Login({ navigation: { goBack, setOptions } }) {
     </View>
   );
 }
+
+const View = styled.View`
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+`;
+
+const LoginButton = styled.TouchableOpacity`
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+const LoginText = styled.Text`
+  font-size: 20px;
+`;
+const RegisterText = styled(LoginText)``;
+
+const RegisterButton = styled(LoginButton)``;
+
+const EmailInput = styled.TextInput`
+  background-color: grey;
+  width: 150px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+`;
+const PwInput = styled(EmailInput)``;

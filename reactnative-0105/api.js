@@ -1,3 +1,5 @@
+// * api는 프로그램들이 서로 상호작용하는 것을 도와주는 매개체
+
 import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { dbService } from "./firebase";
 

@@ -10,16 +10,20 @@ export default function ReviewModal({ isOpenModal, setIsOpenModal, movieId }) {
   const [modalTitle, setModalTitle] = useState("");
   const [modalContent, setModalContent] = useState("");
   const [ratings, setRatings] = useState(0);
+
   //받아온 평점을  setRatings시키게 세팅해놈
   const getRatings = (rating) => {
+    console.log("rating에는 뭐가 담겨?", rating);
     setRatings(rating);
   };
+
   const addReview = async () => {
     await addDoc(collection(dbService, "reviews"), {
       title: modalTitle,
       contents: modalContent,
       createdAt: Date.now(),
       rating: ratings,
+      // userId를 authService.currentUser로 설정해놔야 나중에 내리뷰만 불러오기가 가능하것지
       userId: authService.currentUser?.uid,
       movieId,
     });
@@ -29,8 +33,9 @@ export default function ReviewModal({ isOpenModal, setIsOpenModal, movieId }) {
     setRatings(0);
   };
   return (
-    // isOpenModal이 true일때만 보이게 하는 것
-    // transparent를 제거하면 backdrop부분이 허옇게 보여짐
+    // isOpenModal이 true 일때만 보이게 하는 것
+    // isOpenModal을 true로 만들어주는 작업은 Details에서 add버튼 누를때 변경되었다.
+    // transparent를 제거하면 backdrop부분이 하얗게 보여짐
     // animationType에는 다양한 효과가 있음 fade는 떠오르기 효과됌
     <Modal visible={isOpenModal} transparent animationType="slide">
       {/* 모달창 뒤의 배경부분 */}
@@ -45,6 +50,7 @@ export default function ReviewModal({ isOpenModal, setIsOpenModal, movieId }) {
                 alignItems: "flex-start",
               }}
               // onFinishRating을 하면 getRatings 함수가 실행됌
+              // onFinishRating는 Gives you the final rating value as a whole number
               onFinishRating={getRatings}
               ratingCount={10}
               imageSize={20}

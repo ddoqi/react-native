@@ -14,6 +14,7 @@ export default function App() {
   const queryClient = new QueryClient();
 
   return (
+    // 리액트 쿼리를 사용하기 위해서 최상단에서 QueryClientProvider를 사용하여 앱을 감싸준다.
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
         <Root />

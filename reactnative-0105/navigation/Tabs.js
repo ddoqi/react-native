@@ -4,17 +4,20 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Movies from "../screen/Movies";
 import My from "../screen/My";
 
+// 아래탭
 const Tab = createBottomTabNavigator();
 
 export default function Tabs() {
-  console.log("Tabs가 호출되었다면 쏴리질러~~~");
+  console.log("Tabs 호출 ㅇㅅㅇ ");
   return (
     <Tab.Navigator>
       <Tab.Screen
         name="Movies"
         component={Movies}
         options={{
+          // title: Generic title that can be used as a fallback(대비책) for headerTitle and tabBarLabel.
           title: "Tabs - Movie스크린 호출",
+          // Title string of a tab displayed in the tab bar
           tabBarLabel: "Movies",
         }}
       />

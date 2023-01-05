@@ -21,6 +21,7 @@ export default function ReviewEdit({
   const [newTitle, setNewTitle] = useState("");
   const [newContents, setNewContents] = useState("");
 
+  // ?? useMutation : 근데 왜 바로 deleteReview,editReview를 안쓰고 useMutation를 써야했던걸까??
   const { isLoading: isLoadingDeleting, mutate: removeReview } = useMutation(
     ["deleteReview", review.id],
     (body) => deleteReview(body),
@@ -124,6 +125,7 @@ export default function ReviewEdit({
               setNewContents("");
               setNewTitle("");
               setRatings(0);
+              // 수정해주는 작업이 모두 끝났으면, 왔던 곳으로 다시 돌아가게 해주려고 아래 if문을 넣어준 것
               // Detail에서부터 왔으면 ReviewDetail로 가고, 뒤로가기를 누르면 Detail이 나오도록
               if (from === "Detail") {
                 navigation.reset({

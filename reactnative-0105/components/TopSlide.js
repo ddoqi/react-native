@@ -14,10 +14,15 @@ import styled from "@emotion/native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function TopSlide({ movie }) {
+  // useNavigation는 디테일 페이지로 가려고 쓴 것
+  // Stacks의 Detail이라는 스크린으로 이동하도록 전달한다.
   const { navigate } = useNavigation();
   return (
+    // TouchableOpacity 전체에 onPress를 해주어야, 클릭을 하면 디테일 페이지로 이동하지
     <TouchableOpacity
       onPress={() => {
+        // movie.id가 가능한 이유?? TopSlide가 movie를 받아왔음! 어디서? Movies에서!!
+        // Detail에 movie.id를 넘겨준걸까??
         navigate("Stacks", { screen: "Detail", params: { movieId: movie.id } });
       }}
     >
